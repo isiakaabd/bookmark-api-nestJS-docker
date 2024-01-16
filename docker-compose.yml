@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  dev-db:
+    image: postgres:13
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=isiakaabd
+      - POSTGRES_PASSWORD=Akin2546@
+      - POSTGRES_DB=nest
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: isiakaabd
+      POSTGRES_PASSWORD: Akin2546@
+      POSTGRES_DB: nest
